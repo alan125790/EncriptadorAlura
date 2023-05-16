@@ -9,7 +9,7 @@ function btnEncriptar(){
 }
 
 function encriptar(stringEncriptada) {
-    let lista = [{"a","ai"}, {"e","enter"}, {"i","imes"}, {"o","ober"},{"u","ufat"}];
+    let lista = [["i","imes"], ["e","enter"], ["a","ai"], ["o","ober"],["u","ufat"]];
     stringEncriptada = stringEncriptada.toLowerCase();
 
     for (let i = 0; i < lista.length; i++) {
@@ -17,12 +17,18 @@ function encriptar(stringEncriptada) {
             stringEncriptada = stringEncriptada.replaceAll(lista[i][0], lista[i][1]);
         }
         
-    }
+    }   
     return stringEncriptada;
 }
 
+function btnDesencriptar(){
+    const textoDesencriptado = desencriptar(textArea.value);
+    mensaje.value = textoDesencriptado;
+    textArea.value = "";
+}
+
 function desencriptar(stringDesencriptada) {
-    let lista = [{"a","ai"}, {"e","enter"}, {"i","imes"}, {"o","ober"},{"u","ufat"}];
+    let lista = [["i","imes"], ["e","enter"], ["a","ai"], ["o","ober"],["u","ufat"]];
     stringDesencriptada = stringDesencriptada.toLowerCase();
 
     for (let i = 0; i < lista.length; i++) {
@@ -31,7 +37,7 @@ function desencriptar(stringDesencriptada) {
         }
         
     }
-    return stringEncriptada;
+    return stringDesencriptada;
 }
 
 
